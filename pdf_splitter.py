@@ -1,11 +1,13 @@
 import sys
+import os
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 def split_pdf_half(path):
-    with open(path, 'rb') as file:
-        pdf = PdfFileReader(file)
-        num_of_pages = pdf.getNumPages()
-        print(num_of_pages)
+
+    file_name = os.path.splitext(os.path.basename(path))[0]
+    
+    pdf = PdfFileWriter(path)
+    print(pdf.getNumpages)
     
 
 if __name__ == "__main__":
